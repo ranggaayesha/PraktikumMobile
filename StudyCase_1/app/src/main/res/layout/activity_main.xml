@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.httpsinauyo.studycase_1.MainActivity">
+
+    <TextView
+        android:id="@+id/T1.1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/T1.1"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        />
+
+    <TextView
+        android:id="@+id/T1.2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_below="@+id/T1.1"
+        android:layout_centerHorizontal="true"
+        android:text="@string/T1.2"
+        android:textSize="28sp"
+        />
+
+    <EditText
+        android:id="@+id/Menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_gravity="center"
+        android:layout_below="@+id/T1.2"
+        android:layout_marginTop="55dp"
+        android:hint="@string/Menu"
+        android:textSize="25sp"
+        />
+
+    <EditText
+        android:id="@+id/FoodQ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="16dp"
+        android:layout_below="@+id/Menu"
+        android:hint="@string/FoodQ"
+        android:textSize="25sp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/buttonEatbus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/FoodQ"
+            android:layout_marginRight="20dp"
+            android:background="@color/colorAccent"
+            android:onClick="eatbus"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/buttonEatbus"
+            android:textColor="@android:color/background_light"
+            android:textSize="25sp"
+            />
+
+        <Button
+            android:id="@+id/buttonAbnormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/button"
+            android:background="@color/colorAccent"
+            android:onClick="abnormal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/buttonAbnormal"
+            android:textColor="@android:color/background_light"
+            android:textSize="25sp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

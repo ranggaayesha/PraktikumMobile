@@ -1,0 +1,13 @@
+<resources>
+    <string name="appName">Rangga Ayesha_1202151233_Modul1</string>
+    <string name="T1.1">Makan Malam</string>
+    <string name="T1.2">dengan Milea</string>
+    <string name="buttonEatbus">EATBUS</string>
+    <string name="buttonAbnormal">ABNORMAL</string>
+    <string name="Menu">Masukkan Menu Makanan</string>
+    <string name="FoodQ">Masukkan Jumlah Porsi</string>
+    <string name="displayRestaurant">no restaurant selected</string>
+    <string name="displayMenu">no food selected</string>
+    <string name="displayFoodQ">enter correct number</string>
+    <string name="displayCost">failed</string>
+</resources>

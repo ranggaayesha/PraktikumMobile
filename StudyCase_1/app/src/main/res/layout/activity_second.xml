@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.httpsinauyo.studycase_1.SecondActivity">
+
+    <TextView
+        android:id="@+id/T1.1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/T1.1"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        />
+
+    <TextView
+        android:id="@+id/displayRestaurant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_below="@+id/T1.1"
+        android:layout_centerHorizontal="true"
+        android:text="@string/displayRestaurant"
+        android:textSize="28sp"
+        />
+
+    <TextView
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_below="@+id/displayRestaurant"
+        android:layout_centerHorizontal="true"
+        android:text="Menu"
+        android:layout_marginTop="30dp"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/displayMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_below="@+id/menu"
+        android:layout_centerHorizontal="true"
+        android:text="@string/displayMenu"
+        android:textSize="28sp"
+        />
+
+    <TextView
+        android:id="@+id/FoodQ"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_below="@+id/displayRestaurant"
+        android:layout_centerHorizontal="true"
+        android:text="Porsi"
+        android:layout_marginTop="30dp"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/displayFoodQ"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_below="@+id/menu"
+        android:layout_centerHorizontal="true"
+        android:text="@string/displayFoodQ"
+        android:textSize="28sp"
+        />
+
+    <TextView
+        android:id="@+id/Cost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_below="@+id/displayRestaurant"
+        android:layout_centerHorizontal="true"
+        android:text="Harga"
+        android:layout_marginTop="30dp"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/displayCost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_below="@+id/menu"
+        android:layout_centerHorizontal="true"
+        android:text="@string/displayCost"
+        android:textSize="28sp"
+        />
+
+</LinearLayout>
