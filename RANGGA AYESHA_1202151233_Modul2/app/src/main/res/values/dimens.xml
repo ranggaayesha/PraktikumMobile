@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_width">150sp</dimen>
+    <dimen name="logo_height">150sp</dimen>
+    <dimen name="margin_top_logo">50dp</dimen>
+    <dimen name="text_size_head">20sp</dimen>
+    <dimen name="padding_button">10sp</dimen>
+    <dimen name="width_editText">200dp</dimen>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.ranggaayesha_1202151233_modul2.DetailMenu">
+
+    <TextView
+        android:id="@+id/tv_detailFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_head"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_top_logo"
+        android:text="Nasi Wagyu"/>
+    <ImageView
+        android:id="@+id/iv_detailPhoto"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        android:src="@drawable/logo"
+        android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:id="@+id/tv_detailPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:text="Rp. 30000"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="Komposisi : "/>
+
+    <TextView
+        android:id="@+id/tv_detailkompos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Ayam, dan bumbu lezat"/>
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.ranggaayesha_1202151233_modul2.TakeAway">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_logo"
+        android:text="Identitas Pemesan:"
+        android:textSize="@dimen/text_size_head"
+        android:layout_gravity="center_horizontal"/>
+    <EditText
+        android:id="@+id/et_Name"
+        android:layout_width="@dimen/width_editText"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10sp"
+        android:hint="Name"/>
+    <EditText
+        android:id="@+id/et_Phone"
+        android:layout_width="@dimen/width_editText"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10sp"
+        android:inputType="phone"
+        android:hint="Phone"/>
+    <EditText
+        android:id="@+id/et_Address"
+        android:layout_width="@dimen/width_editText"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10sp"
+        android:hint="Address"/>
+    <EditText
+        android:id="@+id/et_Note"
+        android:layout_width="@dimen/width_editText"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10sp"
+        android:hint="Note"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PILIH PESANAN"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
+        android:padding="@dimen/padding_button"
+        android:layout_marginTop="10sp"
+        android:onClick="onClickOrder"
+        />
+</LinearLayout>

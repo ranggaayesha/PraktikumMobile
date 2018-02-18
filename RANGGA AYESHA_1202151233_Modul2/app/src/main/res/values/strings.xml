@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Chicken Shunduls</string>
+    <string-array name="tables_array">
+        <item>Meja dalam 1</item>
+        <item>Meja dalam 2</item>
+        <item>Meja dalam 3</item>
+        <item>Meja dalam 4</item>
+        <item>Meja luar</item>
+        <item>Meja luar 2</item>
+        <item>VIP 1</item>
+        <item>VIP 2</item>
+        <item>VIP 3</item>
+        <item>VVIP</item>
+    </string-array>
+</resources>
