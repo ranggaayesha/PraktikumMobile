@@ -23,6 +23,6 @@ public class Splash extends Activity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
-        }, 5000L); //hitungannya 1000L = 1 detik, jadi untuk pemasangan 5000L = 5 detik
+        }, 3000L); //hitungannya 1000L = 1 detik, jadi untuk pemasangan 5000L = 5 detik
     }
 }
