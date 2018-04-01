@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.example.android.ranggaayesha_1202151233_modul6.LoginActivity">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ead"
+        android:layout_gravity="center"
+        />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="email"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:textAlignment="center"
+        android:inputType="textPassword"/>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnlogin"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:onClick="login"
+            android:text="Masuk"
+            />
+
+        <Button
+            android:id="@+id/btndaftar"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:onClick="daftar"
+            android:text="daftar"
+            />
+    </LinearLayout>
+</LinearLayout>
