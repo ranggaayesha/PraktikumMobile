@@ -35,6 +35,6 @@
 
         android:layout_marginTop="5dp"
 
-        tools:text="@string/lorem" />
+        tools:text="@string/dummy" />
 
 </LinearLayout>

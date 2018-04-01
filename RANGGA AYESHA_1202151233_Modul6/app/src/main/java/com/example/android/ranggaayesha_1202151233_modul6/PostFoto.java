@@ -32,7 +32,6 @@ import java.util.Map;
 public class PostFoto extends AppCompatActivity {
 
     private static final String TAG = "NewPostActivity";
-
     private static final String REQUIRED = "Required";
 
     String imgDecodableString;
@@ -46,11 +45,8 @@ public class PostFoto extends AppCompatActivity {
 
 
     private EditText mTitleField;
-
     private EditText mBodyField;
-
     private Button btnChoose;
-
     ImageView imageView;
 
     private FloatingActionButton mSubmitButton;
@@ -61,17 +57,11 @@ public class PostFoto extends AppCompatActivity {
         setContentView(R.layout.activity_post_foto);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
-
         mTitleField = findViewById(R.id.field_title);
-
         mBodyField = findViewById(R.id.field_body);
-
         mSubmitButton = findViewById(R.id.fab_submit_post);
-
         btnChoose = findViewById(R.id.choose);
-
         imageView = findViewById(R.id.gambar);
-
         btnChoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -147,7 +137,6 @@ public class PostFoto extends AppCompatActivity {
 
     private void submitPost() {
         final String title = mTitleField.getText().toString();
-
         final String body = mBodyField.getText().toString();
 
 
@@ -253,7 +242,6 @@ public class PostFoto extends AppCompatActivity {
 
     private void setEditingEnabled(boolean b) {
         mTitleField.setEnabled(b);
-
         mBodyField.setEnabled(b);
 
         if (b) {
@@ -269,22 +257,19 @@ public class PostFoto extends AppCompatActivity {
 
     private void writeNewPost(String userId, String username, String title, String body) {
 
-        // Create new post at /user-posts/$userid/$postid and at
 
-        // /posts/$postid simultaneously
+        //Membuat posts untuk mengirim ke database
 
         String key = mDatabase.child("posts").push().getKey();
 
-        Post post = new Post(userId, username, title, body);
+        Post post = new Post(userId, username, title, body);            //Menyertakan data apa saja yang ingin diberikan
 
         Map<String, Object> postValues = post.toMap();
 
 
 
         Map<String, Object> childUpdates = new HashMap<>();
-
         childUpdates.put("/posts/" + key, postValues);
-
         childUpdates.put("/user-posts/" + userId + "/" + key, postValues);
 
 

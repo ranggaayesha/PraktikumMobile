@@ -86,23 +86,19 @@ public class HomeActivity extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
 
         mViewPager = findViewById(R.id.container);
-
         mViewPager.setAdapter(mPagerAdapter);
-
         TabLayout tabLayout = findViewById(R.id.tabs);
-
         tabLayout.setupWithViewPager(mViewPager);
 
 
 
-        // Button launches NewPostActivity
+        //menjalankan daftar postingan terbaru
 
         findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
 
             @Override
 
             public void onClick(View v) {
-
                 startActivity(new Intent(HomeActivity.this, PostFoto.class));
 
             }
@@ -116,9 +112,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
 
     public boolean onCreateOptionsMenu(Menu menu) {
-
         getMenuInflater().inflate(R.menu.menu_main, menu);
-
         return true;
 
     }
@@ -128,21 +122,14 @@ public class HomeActivity extends AppCompatActivity {
     @Override
 
     public boolean onOptionsItemSelected(MenuItem item) {
-
         int i = item.getItemId();
-
         if (i == R.id.logout) {
-
             FirebaseAuth.getInstance().signOut();
-
             startActivity(new Intent(this, LoginActivity.class));
-
             finish();
-
             return true;
 
         } else {
-
             return super.onOptionsItemSelected(item);
 
         }

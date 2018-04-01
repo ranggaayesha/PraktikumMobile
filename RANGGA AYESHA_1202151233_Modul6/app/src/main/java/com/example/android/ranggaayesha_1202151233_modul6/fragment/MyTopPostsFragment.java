@@ -15,17 +15,15 @@ public class MyTopPostsFragment extends PostListFragment {
 
         // [START my_top_posts_query]
 
-        // My top posts by number of stars
+        //Mengurutkan daftar post yang dimiliki berdasarkan jumlah bintang yang diberikan
 
         String myUserId = getUid();
 
-        Query myTopPostsQuery = databaseReference.child("user-posts").child(myUserId)
+        Query myTopPostsQuery = databaseReference.child("user-posts").child(myUserId)           //memberikan nama database untuk postingan dari akun yang sedang dipakai
 
-                .orderByChild("starCount");
+                .orderByChild("starCount");         //akan melihat jumlah bintang yang ada pada postingan
 
         // [END my_top_posts_query]
-
-
 
         return myTopPostsQuery;
 

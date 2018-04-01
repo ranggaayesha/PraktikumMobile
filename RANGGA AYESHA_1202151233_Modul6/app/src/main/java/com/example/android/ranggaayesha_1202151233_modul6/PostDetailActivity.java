@@ -64,7 +64,7 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_detail);
 
-        // Get post key from intent
+        // Mendapatkan key dari postingan melalui Intent
 
         mPostKey = getIntent().getStringExtra(EXTRA_POST_KEY);
 
@@ -76,36 +76,26 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
 
 
 
-        // Initialize Database
+        // menginisiasikan database
 
         mPostReference = FirebaseDatabase.getInstance().getReference()
-
                 .child("posts").child(mPostKey);
 
         mCommentsReference = FirebaseDatabase.getInstance().getReference()
-
                 .child("post-comments").child(mPostKey);
 
 
 
-        // Initialize Views
+        // menginisiasikan tampilan
 
         mAuthorView = findViewById(R.id.post_author);
-
         mTitleView = findViewById(R.id.post_title);
-
         mBodyView = findViewById(R.id.post_body);
-
         mCommentField = findViewById(R.id.field_comment_text);
-
         mCommentButton = findViewById(R.id.button_post_comment);
-
         mCommentsRecycler = findViewById(R.id.recycler_comments);
 
-
-
         mCommentButton.setOnClickListener(this);
-
         mCommentsRecycler.setLayoutManager(new LinearLayoutManager(this));
 
     }
@@ -149,7 +139,7 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
 
             public void onCancelled(DatabaseError databaseError) {
 
-                // Getting Post failed, log a message
+                //Membuat log bahwa database error
 
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
 
@@ -171,16 +161,13 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
 
 
 
-        // Keep copy of post listener so we can remove it when app stops
+        //Membuat cadangan dari listener si postingan, agar dapat dihentikan saat aplikasi berhenti
 
         mPostListener = postListener;
 
-
-
-        // Listen for comments
+        //mencari komentar
 
         mAdapter = new CommentAdapter(this, mCommentsReference);
-
         mCommentsRecycler.setAdapter(mAdapter);
 
     }
@@ -190,23 +177,18 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
     @Override
 
     public void onStop() {
-
         super.onStop();
 
-
-
-        // Remove post value event listener
+        //menghilangkan nilai saat dihentikan
 
         if (mPostListener != null) {
-
             mPostReference.removeEventListener(mPostListener);
 
         }
 
 
 
-        // Clean up comments listener
-
+        //membersihkan listener komentar
         mAdapter.cleanupListener();
 
     }
@@ -216,11 +198,8 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
     @Override
 
     public void onClick(View v) {
-
         int i = v.getId();
-
         if (i == R.id.button_post_comment) {
-
             postComment();
 
         }
@@ -230,31 +209,22 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
 
 
     private void postComment() {
-
         FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
-
         final String uid = current_user.getUid();
-
         FirebaseDatabase.getInstance().getReference().child("users").child(uid)
-
                 .addListenerForSingleValueEvent(new ValueEventListener() {
-
                     @Override
-
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
                         // Get user information
 
                         User user = dataSnapshot.getValue(User.class);
-
                         String authorName = user.username;
-
 
 
                         // Create new comment object
 
                         String commentText = mCommentField.getText().toString();
-
                         Comment comment = new Comment(uid, authorName, commentText);
 
 
@@ -263,21 +233,15 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
 
                         mCommentsReference.push().setValue(comment);
 
-
-
                         // Clear the field
 
                         mCommentField.setText(null);
 
                     }
 
-
-
                     @Override
 
                     public void onCancelled(DatabaseError databaseError) {
-
-
 
                     }
 
@@ -285,26 +249,18 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
 
     }
 
-
-
     private static class CommentViewHolder extends RecyclerView.ViewHolder {
 
 
 
         public TextView authorView;
-
         public TextView bodyView;
-
-
 
         public CommentViewHolder(View itemView) {
 
             super(itemView);
 
-
-
             authorView = itemView.findViewById(R.id.comment_author);
-
             bodyView = itemView.findViewById(R.id.comment_body);
 
         }
@@ -318,15 +274,9 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
 
 
         private Context mContext;
-
         private DatabaseReference mDatabaseReference;
-
         private ChildEventListener mChildEventListener;
-
-
-
         private List<String> mCommentIds = new ArrayList<>();
-
         private List<Comment> mComments = new ArrayList<>();
 
 
@@ -334,7 +284,6 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
         public CommentAdapter(final Context context, DatabaseReference ref) {
 
             mContext = context;
-
             mDatabaseReference = ref;
 
 
@@ -364,9 +313,7 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
                     // Update RecyclerView
 
                     mCommentIds.add(dataSnapshot.getKey());
-
                     mComments.add(comment);
-
                     notifyItemInserted(mComments.size() - 1);
 
                     // [END_EXCLUDE]
@@ -396,21 +343,17 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
                     // [START_EXCLUDE]
 
                     int commentIndex = mCommentIds.indexOf(commentKey);
-
                     if (commentIndex > -1) {
 
                         // Replace with the new data
 
                         mComments.set(commentIndex, newComment);
 
-
-
                         // Update the RecyclerView
 
                         notifyItemChanged(commentIndex);
 
                     } else {
-
                         Log.w(TAG, "onChildChanged:unknown_child:" + commentKey);
 
                     }
@@ -424,7 +367,6 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
                 @Override
 
                 public void onChildRemoved(DataSnapshot dataSnapshot) {
-
                     Log.d(TAG, "onChildRemoved:" + dataSnapshot.getKey());
 
 
@@ -440,13 +382,11 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
                     // [START_EXCLUDE]
 
                     int commentIndex = mCommentIds.indexOf(commentKey);
-
                     if (commentIndex > -1) {
 
                         // Remove data from the list
 
                         mCommentIds.remove(commentIndex);
-
                         mComments.remove(commentIndex);
 
 
@@ -470,7 +410,6 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
                 @Override
 
                 public void onChildMoved(DataSnapshot dataSnapshot, String previousChildName) {
-
                     Log.d(TAG, "onChildMoved:" + dataSnapshot.getKey());
 
 
@@ -496,9 +435,7 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
                 public void onCancelled(DatabaseError databaseError) {
 
                     Log.w(TAG, "postComments:onCancelled", databaseError.toException());
-
                     Toast.makeText(mContext, "Failed to load comments.",
-
                             Toast.LENGTH_SHORT).show();
 
                 }
@@ -522,11 +459,8 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
         @Override
 
         public CommentViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
             LayoutInflater inflater = LayoutInflater.from(mContext);
-
             View view = inflater.inflate(R.layout.item_comment, parent, false);
-
             return new CommentViewHolder(view);
 
         }
@@ -536,11 +470,8 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
         @Override
 
         public void onBindViewHolder(CommentViewHolder holder, int position) {
-
             Comment comment = mComments.get(position);
-
             holder.authorView.setText(comment.author);
-
             holder.bodyView.setText(comment.text);
 
         }
@@ -550,7 +481,6 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
         @Override
 
         public int getItemCount() {
-
             return mComments.size();
 
         }
@@ -558,9 +488,7 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
 
 
         public void cleanupListener() {
-
             if (mChildEventListener != null) {
-
                 mDatabaseReference.removeEventListener(mChildEventListener);
 
             }

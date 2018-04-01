@@ -187,9 +187,9 @@ public abstract class PostListFragment extends Fragment {
 
                         // Need to write to both places the post is stored
 
-                        DatabaseReference globalPostRef = mDatabase.child("posts").child(postRef.getKey());
+                        DatabaseReference globalPostRef = mDatabase.child("posts").child(postRef.getKey());         //Menampilkan post dari database
 
-                        DatabaseReference userPostRef = mDatabase.child("user-posts").child(model.uid).child(postRef.getKey());
+                        DatabaseReference userPostRef = mDatabase.child("user-posts").child(model.uid).child(postRef.getKey());         //Menampilkan Post dari user yang ada
 
 
 

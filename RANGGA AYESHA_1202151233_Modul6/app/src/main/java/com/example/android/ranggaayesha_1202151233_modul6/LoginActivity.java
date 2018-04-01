@@ -145,12 +145,12 @@ public class LoginActivity extends AppCompatActivity {
     private void writeNewUser(String uid, String username, String email) {
         User user = new User(username,email);
 
-        mDatabase.child("users").child(uid).setValue(user);
+        mDatabase.child("users").child(uid).setValue(user);         //membuat akun users ke database
     }
 
     private String usernameFromEmail(String email) {
 
-        if (email.contains("@")){
+        if (email.contains("@")){ //memberikan pemisahan berdasarkan tanda at / @
             return email.split("@")[0];
         } else {
             return email;
@@ -199,19 +199,16 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        //Memberikan item ke action bar bila ada.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        //Membuat item yang ada di action bar agar dapat menanggapi tombol back
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.logout) {
 
             signOut();

@@ -22,7 +22,7 @@
         </activity>
         <activity
             android:name="com.example.android.ranggaayesha_1202151233_modul6.HomeActivity"
-            android:label="@string/title_activity_home"
+            android:label="@string/title_ahome"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name="com.example.android.ranggaayesha_1202151233_modul6.PostFoto" />
         <activity android:name="com.example.android.ranggaayesha_1202151233_modul6.PostDetailActivity"/>
